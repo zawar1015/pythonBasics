@@ -1,0 +1,37 @@
+
+#Students Record Management using Dictionary
+#-------------------------------------------
+
+
+def main():
+    # Empty dictionary to store total students
+    students = {}
+
+    #  it Ask for how many students to be  record
+    n = int(input("How many students do you want to add? "))
+
+    for i in range(1, n + 1):
+        print(f" Enter details for student {i} . ")
+        roll_no = input("Roll Number: ")
+        name = input("Name: ")
+        age = int(input("Age: "))
+        grade = input("Grade: ")
+
+        # Store student details in a nested dictionary
+        students[roll_no] = {
+            "name": name,
+            "age": age,
+            "grade": grade
+        }
+
+    # Print all student records
+    for roll_no, details in students.items():
+        print(f"Roll No: {roll_no}")
+        for key, value in details.items():
+            print(f"  {key.capitalize()}: {value}")
+        print("-" * 20)
+
+
+
+if __name__ == "__main__":
+    main()
